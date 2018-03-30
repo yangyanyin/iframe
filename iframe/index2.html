@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>index2</title>
+	<script src="src/jquery.min.js"></script>
+	<script src="src/iframe.js"></script>
+	<style type="text/css">
+		div{
+			color:#444;
+		}
+	</style>
+</head>
+<body>
+	<div class="index2">
+		我把你当兄弟，你既然跨越iframe修改我！！！！	
+	</div>
+	<script type="text/javascript">
+		var chan = Channel.build({window: window.parent, origin: "*", scope: "yangyanyin"});
+		chan.bind("area_tab", function (trans,color) {
+		    $(".index2").css("color",color);
+		});
+	</script>
+</body>
+</html>
